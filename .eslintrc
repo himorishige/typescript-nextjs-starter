@@ -14,7 +14,15 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "plugins": ["import", "jsx-a11y", "react", "react-hooks", "prettier"],
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
+    "prefer-arrow",
+    "prettier",
+    "simple-import-sort"
+  ],
   "extends": ["airbnb", "eslint-config-prettier", "prettier/react"],
   "rules": {
     "prettier/prettier": "error",
@@ -36,6 +44,14 @@
         "jsx": "never"
       }
     ],
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
     "quotes": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
@@ -44,7 +60,8 @@
         "specialLink": ["hrefLeft", "hrefRight"],
         "aspects": ["invalidHref", "preferButton"]
       }
-    ]
+    ],
+    "simple-import-sort/imports": "error"
   },
   "overrides": [
     {
